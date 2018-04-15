@@ -1,0 +1,7 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/iiFlamiinBlaze/AdvancedVanish
+branches:
+- master
+projects:
+  AdvancedVanish:
+    path: ""
+...
