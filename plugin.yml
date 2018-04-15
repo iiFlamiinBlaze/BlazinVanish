@@ -1,0 +1,13 @@
+name: AdvancedVanish
+author: iiFlamiinBlaze
+version: 1.0.0
+api: 3.0.0-ALPHA12
+main: iiFlamiinBlaze\AdvancedVanish\AdvancedVanish
+website: https://github.com/iiFlamiinBlaze/AdvancedVanish
+commands:
+ vanish:
+  permission: "vanish.command"
+  description: "Use this command to vanish"
+permissions:
+ vanish.command:
+  default: op
