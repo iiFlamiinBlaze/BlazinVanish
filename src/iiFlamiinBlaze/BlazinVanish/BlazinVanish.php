@@ -19,7 +19,7 @@
  */
 declare(strict_types=1);
 
-namespace iiFlamiinBlaze\AdvancedVanish;
+namespace iiFlamiinBlaze\BlazinVanish;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
