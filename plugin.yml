@@ -1,12 +1,12 @@
-name: AdvancedVanish
+name: BlazinVanish
 author: iiFlamiinBlaze
-version: 1.0.0
+version: 1.0.1
 api: 3.0.0-ALPHA12
-main: iiFlamiinBlaze\AdvancedVanish\AdvancedVanish
-website: https://github.com/iiFlamiinBlaze/AdvancedVanish
+main: iiFlamiinBlaze\BlazinVanish\BlazinVanish
+website: https://github.com/iiFlamiinBlaze/BlazinVanish
 commands:
  vanish:
-  permission: "vanish.command"
+  permission: vanish.command
   description: "Use this command to vanish"
 permissions:
  vanish.command:

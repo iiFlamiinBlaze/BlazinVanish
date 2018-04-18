@@ -29,15 +29,15 @@ use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
 
-class AdvancedVanish extends PluginBase{
+class BlazinVanish extends PluginBase{
 
-    const PREFIX = "§6AdvancedVanish§b > ";
-    const VERSION = "v1.0.0";
+    const PREFIX = "§6BlazinVanish§b > ";
+    const VERSION = "v1.0.1";
 
     public function onEnable() : void{
         @mkdir($this->getDataFolder());
         $this->saveDefaultConfig();
-        $this->getLogger()->info("AdvancedVanish " . self::VERSION . " by iiFlamiinBlaze has been enabled");
+        $this->getLogger()->info("BlazinVanish " . self::VERSION . " by iiFlamiinBlaze has been enabled");
     }
 
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
