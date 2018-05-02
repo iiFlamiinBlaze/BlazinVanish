@@ -12,7 +12,7 @@ Make sure to read all of the license as it could change at anytime.
 | :---: | :---: | :---: |
  [![Download](https://img.shields.io/badge/download-latest-blue.svg)](https://poggit.pmmp.io/ci/iiFlamiinBlaze/BlazinVanish/) | [![View Count](http://hits.dwyl.io/iiFlamiinBlaze/BlazinVanish.svg)](http://hits.dwyl.io/iiFlamiinBlaze/BlazinVanish) | <a href="https://discord.gg/znEsFsG"><img src="https://discordapp.com/api/guilds/425712766687510528/embed.png" alt="Discord server"/></a> |
  
-This plugin allows you to add a title to a player when they join the server through configs. This plugin is for anyone to use.
+This plugin allows you to vanish from other players through configs. This plugin is for anyone to use.
 If you have any issues with the plugin, please make an issue [here](https://github.com/iiFlamiinBlaze/BlazinVanish/issues/new).
 * Credits: [BlazeTheDev](https://github.com/iiFlamiinBlaze)
 
