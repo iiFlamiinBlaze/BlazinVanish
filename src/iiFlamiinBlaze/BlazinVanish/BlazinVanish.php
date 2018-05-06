@@ -72,14 +72,14 @@ class BlazinVanish extends PluginBase{
                 $player = $this->getServer()->getPlayer($args[0]);
                 if(!in_array($player->getName(), $this->vanish)){
                     $this->vanish[] = $player->getName();
-                    $sender->setDataFlag(Entity::DATA_FLAGS, Entity::DATA_FLAG_INVISIBLE, true);
-                    $sender->setNameTagVisible(false);
-                    $sender->sendMessage($this->getConfig()->get("vanished-message"));
+                    $player->setDataFlag(Entity::DATA_FLAGS, Entity::DATA_FLAG_INVISIBLE, true);
+                    $player->setNameTagVisible(false);
+                    $player->sendMessage($this->getConfig()->get("vanished-message"));
                     $sender->sendMessage(self::PREFIX . TextFormat::GREEN . "You have vanished " . TextFormat::AQUA . $player->getName());
                 }elseif(in_array($player->getName(), $this->vanish)){
                     unset($this->vanish[array_search($player->getName(), $this->vanish)]);
-                    $sender->setDataFlag(Entity::DATA_FLAGS, Entity::DATA_FLAG_INVISIBLE, false);
-                    $sender->setNameTagVisible(true);
+                    $player->setDataFlag(Entity::DATA_FLAGS, Entity::DATA_FLAG_INVISIBLE, false);
+                    $player->setNameTagVisible(true);
                     $player->sendMessage($this->getConfig()->get("unvanished-message"));
                     $sender->sendMessage(self::PREFIX . TextFormat::GREEN . "You have un-vanished " . TextFormat::AQUA . $player->getName());
                 }
