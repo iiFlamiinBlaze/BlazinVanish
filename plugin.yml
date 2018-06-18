@@ -1,8 +1,8 @@
 name: BlazinVanish
 author: iiFlamiinBlaze
-version: 1.0.2
+version: 1.0.3
 description: An advanced survival vanish plugin for PocketMine
-api: [3.0.0-ALPHA11, 3.0.0-ALPHA12]
+api: 3.0.0
 main: iiFlamiinBlaze\BlazinVanish\BlazinVanish
 commands:
  vanish:
