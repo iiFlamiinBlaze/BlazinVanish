@@ -1,6 +1,6 @@
 name: BlazinVanish
 author: iiFlamiinBlaze
-version: 1.0.3
+version: 1.0.4
 description: An advanced survival vanish plugin for PocketMine
 api: 3.0.0
 main: iiFlamiinBlaze\BlazinVanish\BlazinVanish
@@ -10,4 +10,6 @@ commands:
   description: "Allows the player to vanish"
 permissions:
  vanish.command:
+  default: op
+ vanish.other:
   default: op

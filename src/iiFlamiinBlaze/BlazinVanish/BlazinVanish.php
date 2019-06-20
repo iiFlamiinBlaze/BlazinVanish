@@ -26,6 +26,8 @@ use pocketmine\command\CommandSender;
 use pocketmine\entity\Effect;
 use pocketmine\entity\EffectInstance;
 use pocketmine\entity\Entity;
+use pocketmine\event\Listener;
+use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
@@ -33,10 +35,10 @@ use pocketmine\utils\TextFormat;
 class BlazinVanish extends PluginBase{
 
 	const PREFIX = "§6BlazinVanish§b > ";
-	const VERSION = "v1.0.3";
+	const VERSION = "v1.0.4";
 
 	/** @var array $vanish */
-	private $vanish = [];
+	protected $vanish = [];
 
 	public function onEnable() : void{
 		@mkdir($this->getDataFolder());
@@ -55,29 +57,33 @@ class BlazinVanish extends PluginBase{
 				return false;
 			}
 			if(empty($args[0])){
-				if(!in_array($sender->getName(), $this->vanish)){
-					$this->vanish[] = $sender->getName();
+				if(!isset($this->vanish[$sender->getName()])){
+					$this->vanish[$sender->getName()] = true;
 					$sender->setDataFlag(Entity::DATA_FLAGS, Entity::DATA_FLAG_INVISIBLE, true);
 					$sender->setNameTagVisible(false);
 					$sender->sendMessage($this->getConfig()->get("vanished-message"));
-				}elseif(in_array($sender->getName(), $this->vanish)){
-					unset($this->vanish[array_search($sender->getName(), $this->vanish)]);
+				}elseif(isset($this->vanish[$sender->getName()])){
+					unset($this->vanish[$sender->getName()]);
 					$sender->setDataFlag(Entity::DATA_FLAGS, Entity::DATA_FLAG_INVISIBLE, false);
 					$sender->setNameTagVisible(true);
 					$sender->sendMessage($this->getConfig()->get("unvanished-message"));
 				}
 				return false;
 			}
+			if(!$sender->hasPermission("vanish.other")){
+				$sender->sendMessage(self::PREFIX . TextFormat::RED . "You do not have permission to vanish others");
+				return false;
+			}
 			if($this->getServer()->getPlayer($args[0])){
 				$player = $this->getServer()->getPlayer($args[0]);
-				if(!in_array($player->getName(), $this->vanish)){
-					$this->vanish[] = $player->getName();
+				if(!isset($this->vanish[$player->getName()])){
+					$this->vanish[$player->getName()] = true;
 					$player->setDataFlag(Entity::DATA_FLAGS, Entity::DATA_FLAG_INVISIBLE, true);
 					$player->setNameTagVisible(false);
 					$player->sendMessage($this->getConfig()->get("vanished-message"));
 					$sender->sendMessage(self::PREFIX . TextFormat::GREEN . "You have vanished " . TextFormat::AQUA . $player->getName());
-				}elseif(in_array($player->getName(), $this->vanish)){
-					unset($this->vanish[array_search($player->getName(), $this->vanish)]);
+				}elseif(isset($this->vanish[$player->getName()])){
+					unset($this->vanish[$player->getName()]);
 					$player->setDataFlag(Entity::DATA_FLAGS, Entity::DATA_FLAG_INVISIBLE, false);
 					$player->setNameTagVisible(true);
 					$player->sendMessage($this->getConfig()->get("unvanished-message"));
