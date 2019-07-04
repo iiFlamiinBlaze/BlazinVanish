@@ -6,10 +6,10 @@ api: 3.0.0
 main: iiFlamiinBlaze\BlazinVanish\BlazinVanish
 commands:
  vanish:
-  permission: vanish.command
+  permission: blazinvanish.command
   description: "Allows the player to vanish"
 permissions:
- vanish.command:
+ blazinvanish.command:
   default: op
- vanish.other:
+ blazinvanish.other:
   default: op

@@ -39,7 +39,6 @@ class BlazinVanish extends PluginBase{
 	public function onEnable() : void{
 		@mkdir($this->getDataFolder());
 		$this->saveDefaultConfig();
-		$this->getLogger()->info("BlazinVanish " . self::VERSION . " by iiFlamiinBlaze has been enabled");
 	}
 
 	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
@@ -48,7 +47,7 @@ class BlazinVanish extends PluginBase{
 				$sender->sendMessage(self::PREFIX . TextFormat::RED . "Use this command in-game");
 				return false;
 			}
-			if(!$sender->hasPermission("vanish.command")){
+			if(!$sender->hasPermission("blazinvanish.command")){
 				$sender->sendMessage(self::PREFIX . TextFormat::RED . "You do not have permission to use this command");
 				return false;
 			}
@@ -66,7 +65,7 @@ class BlazinVanish extends PluginBase{
 				}
 				return false;
 			}
-			if(!$sender->hasPermission("vanish.other")){
+			if(!$sender->hasPermission("blazinvanish.other")){
 				$sender->sendMessage(self::PREFIX . TextFormat::RED . "You do not have permission to vanish others");
 				return false;
 			}
